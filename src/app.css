@@ -1,0 +1,57 @@
+/* 1. FontFace-Definition mit Fallback und Swap */
+@font-face {
+  font-family: 'GlobalFont';
+  src: url('/fonts/FunnelDisplay-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: optional; /* verhindert Fallback-Flash */
+}
+
+/* 2. Font-Load Trick: Visibility erst bei Font-Ready */
+body {
+  visibility: hidden;
+}
+body.font-loaded {
+  visibility: visible;
+}
+
+/* 3. Globale Layout-Regeln */
+html,
+body,
+#svelte {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 4. Basis-Typografie & Standard-Dark-Mode */
+body {
+  font-family: 'GlobalFont', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+  font-feature-settings: "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  /* Standard: Dark Mode */
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* 5. Theme-Varianten über <html>-Klasse */
+html.dark-mode body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+html.light-mode body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 6. Svelte-Wrap für Layout-Struktur */
+#svelte {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
