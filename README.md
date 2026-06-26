@@ -90,7 +90,7 @@ src/
 - **TypeScript überall**: Weniger Bugs, bessere Entwicklungserfahrung – der Code warnt dich, bevor es Probleme gibt
 - **Schnelle Entwicklung**: Dank Vite und Svelte siehst du Änderungen sofort beim Speichern
 
-## � Fragen oder Probleme?
+## ?Fragen oder Probleme?
 
 Bei Fragen zur Schülerfirma oder zum Projekt einfach ask – wir helfen gerne! 😊
 
